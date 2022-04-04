@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expense</title>
+    <style>
+        #inp{
+            display:grid;
+            height:auto;
+            Width:60%;
+            margin: auto;
+        }
+        #inp>h1{
+            text-align: center;
+            font-size:50px;
+            height:auto;
+            Width:auto;
+            margin-top:30px ;
+            margin-bottom:30px ;
+            color:blue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #box{
+            width:40%;
+            height:40px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border:2px solid rgb(143, 143, 248);
+        }
+        #exp{
+            width:40%;
+            height:40px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border:2px solid rgb(143, 143, 248);
+        }
+        #inc{
+            width:40%;
+            height:40px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border:2px solid rgb(143, 143, 248);
+        }
+        #but{
+            width:10%;
+            height:auto;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #tmon{
+            color:black;
+        }
+        #ticket{
+            display:flex;
+            height:auto;
+            width:90%;
+            margin: auto;
+        }
+        
+        #ticket>div{
+            height:auto;
+            width:80%;
+            margin: auto;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="inp">
+	<h1>Expense Tacker</h1>
+    
+	<select id="box">
+        <option value="">--</option>
+		<option value="jan">January</option>
+        <option value="feb">Febary</option>
+        <option value="mar">March</option>
+        <option value="apr">April</option>
+        <option value="may">May</option>
+        <option value="jun">June</option>
+        <option value="jul">July</option>
+        <option value="aug">August</option>
+        <option value="sept">September</option>
+		<option value="oct">October</option>
+		<option value="nov">November</option>
+        <option value="dec">December</option>
+	</select>
+	<input type="number" placeholder="Income" id="inc" value="">
+	<input type="number" placeholder="Expenses" id="exp" value="">
+	<input type="submit" value="save" style="margin: auto;">
+    </form>
+
+    <div id="ticket">
+        
+    </div>
+    </body>
+	<script>
+        document.querySelector('form').addEventListener("submit", addTicket);
+
+var incm = [
+   
+];
+
+function addTicket() {
+    event.preventDefault();
+    var incomeObj = {
+        mon: document.querySelector('#box').value,
+        sal: document.querySelector('#inc').value,
+        exp: document.querySelector('#exp').value,
+    };
+    income.push(incomeObj);
+    ticket(income);
+}
+
+function ticket(incm) {
+    document.querySelector('#ticket').innerText = "";
+    incm.forEach(function(ticket){
+        var tick = document.createElement('div');
+
+        var mon = document.createElement('p');
+        mon.innerText = ticket.mon;
+
+        var inc = document.createElement('p');
+        inc.value = ticket.sal;
+
+        var exp = document.createElement('p');
+        exp.value = ticket.exp;
+
+        box.append(mon, inc, exp);
+
+        document.querySelector('#ticket').append(tick);
+    });
+}
+
+    </script>
+</body>
+</html>
